@@ -177,16 +177,6 @@ Your idv value :
 
 A QR code image will also be appear. It contains the KDF key. The client also could be used to obtains the idv value from KDF key (offline) and checking the state of the DPT (online).
 
-
-#### Importing DPT data
-
-```
-$ cd sawtooth-evote-submitter
-$ node dpt-importer.js
-```
-
-Now the local DPT ledger has DPT data.
-
 ## Vote process
 
 ```
