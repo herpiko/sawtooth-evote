@@ -1,0 +1,21 @@
+[submodule "sawtooth-evote-node"]
+	path = sawtooth-evote-node
+	url = git@github.com:herpiko/sawtooth-evote-node.git
+[submodule "sawtooth-evote-client"]
+	path = sawtooth-evote-client
+	url = git@github.com:herpiko/sawtooth-evote-client.git
+[submodule "sawtooth-evote-ejbca"]
+	path = sawtooth-evote-ejbca
+	url = git@github.com:herpiko/sawtooth-evote-ejbca.git
+[submodule "sawtooth-evote-server"]
+	path = sawtooth-evote-server
+	url = git@github.com:herpiko/sawtooth-evote-server.git
+[submodule "sawtooth-evote-transaction-processor"]
+	path = sawtooth-evote-transaction-processor
+	url = git@github.com:herpiko/sawtooth-evote-transaction-processor.git
+[submodule "sawtooth-evote-voter-machine"]
+	path = sawtooth-evote-voter-machine
+	url = git@github.com:herpiko/sawtooth-evote-voter-machine.git
+[submodule "sawtooth-evote-submitter"]
+	path = sawtooth-evote-submitter
+	url = git@github.com:herpiko/sawtooth-evote-submitter.git
