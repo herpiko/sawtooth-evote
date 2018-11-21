@@ -18,11 +18,19 @@ tps1:
 	cd sawtooth-evote-node/docker/tps1 && ./run.sh
 	cd sawtooth-evote-submitter && node tps-importer.js evote-server.skripsi.local:3443 172.30.0.111:21311
 
+tps2:
+	-docker kill $$(docker ps -a | grep tps-2- | cut -d' ' -f1)
+	cd sawtooth-evote-node/docker/tps2 && ./run.sh
+	cd sawtooth-evote-submitter && node tps-importer.js evote-server.skripsi.local:3443 172.40.0.121:21321
+
 all:
+	make clean
 	make network
 	make national
 	make server
 	make tps1
+	make tps2
+	docker ps | grep skripsi.local
 
 clean:
 	-docker kill $$(docker ps -a | grep skripsi.local | cut -d' ' -f 1);
