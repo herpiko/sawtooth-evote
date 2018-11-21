@@ -37,7 +37,7 @@ Few separated docker network will be used, `national` and `tps`
 ```
 $ docker network create --subnet=172.20.0.0/16 national
 $ docker network create --subnet=172.30.0.0/16 tps1
-$ docker network create --subnet=172.30.0.0/16 tps2
+$ docker network create --subnet=172.40.0.0/16 tps2
 ```
 
 #### DPT Node
@@ -95,10 +95,10 @@ You'll be asked for a voterId (Common Name of the DPT's certificate), state of t
 Example output :
 
 ```
-$ node dpt-admin.js 
-prompt: voterId:  (52710501019120001_Herpiko_Dwi_Aguno) 
-prompt: verb [registered, invalid, ready]:  (registered) 
-prompt: node host:port:  (localhost:11332) 
+$ node dpt-admin.js
+prompt: voterId:  (52710501019120001_Herpiko_Dwi_Aguno)
+prompt: verb [registered, invalid, ready]:  (registered)
+prompt: node host:port:  (localhost:11332)
 Name : 795cc6c85f2182e7999909c622f674b5a2311beed3945442526a687e64d745f8
 Family name : provinceDPT
 Payload name : 795cc6c85f2182e7999909c622f674b5a2311beed3945442526a687e64d745f8
@@ -130,7 +130,7 @@ Example output :
 		"payload": "o2RWZXJianJlZ2lzdGVyZW..."
 	}, {
 	...
-	
+
 ```
 
 The `dpt-admin.js` can be used to manipulate the DPT state.
@@ -143,8 +143,8 @@ Assume that now you are the DPT (`52710501019120001_Herpiko_Dwi_Aguno`) and want
 $ cd sawtooth-evote-client
 $ node index.js localhost:3000
 node index.js activate
-prompt: Cert path:  (../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.pem) 
-prompt: Key path:  (../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.plain.key) 
+prompt: Cert path:  (../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.pem)
+prompt: Key path:  (../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.plain.key)
 
 VOTER IDENTITY on ../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.pem
 =====================================
@@ -169,9 +169,9 @@ stateId : 41bd53cb8dda2641ceb25850989c18aec4360e11de123fc480278f4fd249220d4718cd
 action : activate
 activating
 {"signedKey":"QbM2jM...","status":"READY"}
-This KDF is stored in smartcard and smartphone : 
+This KDF is stored in smartcard and smartphone :
 dd999b1d2689f123QbM2jMUh0KvYFqEqjNR3XNoZnAQHGJ0AtBhaCAh916w=VTf3jAYC467wRCmQ2ndrAM4YewP7LvaqVyxVNybspX/wMb+c1iE0AhRJqHlqu05GTZB6CYwlaV4jeME5VZPKAQ==
-Your idv value : 
+Your idv value :
 0MWlETXu1/T+hknlVoGTmVzARAtMnLvlVgh+U3Pq9RU=J0AtBhaCAh916w=VTf3jAYC467wRCmQ2ndrAM4YewP7LvaqVyxVNybspX/wMb+c1iE0AhRJqHlqu05GTZB6CYwlaV4jeME5VZPKAQ==
 ```
 
@@ -190,8 +190,8 @@ Example output,
 
 ```
 node index.js
-prompt: Cert path:  (../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.pem) 
-prompt: Key path:  (../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.plain.key) 
+prompt: Cert path:  (../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.pem)
+prompt: Key path:  (../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.plain.key)
 prompt: k Value:  ccb0e8f04fb6a148NNiaXt5gi3upR12zkZsNWYqAgPNnwecewmNIr3qULk4=ueYsi8E/lSSCuW5S4+7EKaLNW+NP1cs0V+/3sQHA5oKzD4soaRRYX22mW5xYClejuToGdKDg+ZhrDuGSi2NkCQ==
 
 VOTER IDENTITY on ../sawtooth-evote-ejbca/Dukcapil_DPT/52710501019120001_herpiko_dwi_aguno.pem
@@ -210,17 +210,17 @@ Verifying cert against CA...
 Verifying cert against CRL...
 - Verified
 
-prompt: 
-Candidates : 
+prompt:
+Candidates :
  - Prabowo - Hatta
  - Jokowi - Kalla
-Please pick by number:  (2) 
+Please pick by number:  (2)
 
 Your k : ccb0e8f04fb6a148NNiaXt5gi3upR12zkZsNWYqAgPNnwecewmNIr3qULk4=ueYsi8E/lSSCuW5S4+7EKaLNW+NP1cs0V+/3sQHA5oKzD4soaRRYX22mW5xYClejuToGdKDg+ZhrDuGSi2NkCQ==
 
 Your idv : cwAQwYsmIZwmmq27yU92Cae1y4KydemGNzrEDzqFtpg=ecewmNIr3qULk4=ueYsi8E/lSSCuW5S4+7EKaLNW+NP1cs0V+/3sQHA5oKzD4soaRRYX22mW5xYClejuToGdKDg+ZhrDuGSi2NkCQ==
 
-Payload : {"cwAQwYsmIZwmmq27yU92Cae1y4KydemGNzrEDzqFtpg=ecewmNIr3qULk4=ueYsi8E/lSSCuW5S4+7EKaLNW+NP1cs0V+/3sQHA5oKzD4soaRRYX22mW5xYClejuToGdKDg+ZhrDuGSi2NkCQ==":"MIIHnwYJKoZIhvcNAQcCoIIHkDCCB4wCAQExDzANBglghkgBZQMEAgEFADCCAkMGCSqGSIb3DQEHAaCCAjQEggIwTUlJQm5nWUpLb1pJaHZjTkFRY0RvSUlCanpDQ0FZc0NBUUF4Z2dGRU1JSUJRQUlCQURBb01Cd3hHakFZQmdOVkJBTU1FVXRRVlVsdWRHVnliV1ZrYVdGMFpVTkJBZ2dSa2ZLR0RkSFZHREFOQmdrcWhraUc5dzBCQVFFRkFBU0NBUUJBSzB3OE1SdHZTVHNSbVU5TTk1OW44R1Y2S1BCaElWL3AvQm5WQldtNDZNLy91T0JRNm9VYUlka21VZnRMZC94SllFNnRTRVErNm8wWWxUSmp3d21uR2trRVBpbzVCRU54U2ZyRFlsRVUvUGF6VWE1aCtTaFB6RWsvT2tpeEZEUlM4ekw3Nyt3UEVHNjFXbTZ3VHlyc0tHSGdDbGpjRjhkamVTL2xwMXBBa2RIMXhQbmxUakE4MExSR25nbEdSVFhuZ1NwVFUwSUFMT01BeVJRYkNGbjRjSjFKZzBlRDJZejZaWm85RjFmejVRNE9HY0cvK2xRK3Q5a2Y3eGx3eDdrYzR5SWlwVTQ3TXpQc1pWMUxiZ1R6QXNzQ3htT2xIUURyZDlrUS9yWXFKT3dPQWxHVUNZUkM5TDE0SzI2b3NLeHFGUWVtRlBkM3RSWmlwbEI5SFUvM01ENEdDU3FHU0liM0RRRUhBVEFkQmdsZ2hrZ0JaUU1FQVNvRUVHME4rNVZlTTRJT2RJWldkbk1Dd3ZxZ0VnUVFnYWN1T3krZXE1cndURDNlOHlldWtnPT2gggNrMIIDZzCCAk+gAwIBAgIIBgO2nfvoOB8wDQYJKoZIhvcNAQELBQAwHDEaMBgGA1UEAwwRS1BVSW50ZXJtZWRpYXRlQ0EwHhcNMTgxMDE3MTAzNzQxWhcNMjAxMDE2MTAzNzQxWjAZMRcwFQYDVQQDDA50cHNfNTI3MTA1XzAwMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALf37SdIL0Eb/zEcuR0Q4JK3n4V/mXoGFEEvVeEXAl+rz7E56DCrKQfC0Rjg4TPG0ycOdnBB7KkoT2TC7IR8a/U6nc2VNQovqM0LqOmwN7Ltd4pKpAZdoapnizrp6q/i4zwpb0nb7oaDaoRe7wG4i7AtHQ0Bq363Hg6Vyu3UIEgCtgvrRPC7r1TXUNsvEThYYVTd3jbeVh5z0e0w+rrDLdwAbNKuW1sgG0StsyDMQwwrAPDjuZfwmteqeYUhUdsjoZXBVAgPpzyQT8k+2q56PkwJFlhvaDcBHL662C0EBoUTCcBDm7ivLN5yiCkW7WKMkaQT2IxmBcNGkf1k6KFtGGUCAwEAAaOBrzCBrDAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFCoAs13JJG/NWDBSbxTZ2mtxf+qyMEwGA1UdJQRFMEMGCyqBS7cYAQGWyH8BBgsqgUu3GAEBlsh/AgYIKwYBBQUHAwIGCCsGAQUFBwMEBgkqhkiG9y8BAQUGCCsGAQUFBwMBMB0GA1UdDgQWBBQPUuWZ/VH9/MZ2e+jvfs8jEwilijAOBgNVHQ8BAf8EBAMCBeAwDQYJKoZIhvcNAQELBQADggEBAG9rqcszy4xjhhy9Az8iAxrwZBGmQmj/PxjXTJDSUkoKN+lWW9DoHqSpJ4VlK5VDZOY46pyRyjvI8MdRbDRPV031iaLm/S3rDGC4EPyJnCKySARcwQ7NHvJBV3wT2XJAIZaHLgcIX5FP5mRJEQ0LE+ap01IKX+Ag60r+dCazPvbNDpNp+rAB5qokNR7Zgiuz8ZcoWSw8D+JXXkd6eT4E3qxMSuT5pDK56t1qS20mCgjuUf5p/qF3LF5jgg3b70o2lOUU2FUdREqv8Avm98tmJCwcq7DZo3nR/ko/Yjfhl4n673DM0XaLtDXuCORGINcA0IYJGXdXGhMmSt00eq87weIxggG+MIIBugIBATAoMBwxGjAYBgNVBAMMEUtQVUludGVybWVkaWF0ZUNBAggGA7ad++g4HzANBglghkgBZQMEAgEFAKBpMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwLwYJKoZIhvcNAQkEMSIEILYdLZ7w6r5i+tCcNtUDqseVLX8DxLn1v/t2TrNYJtX7MBwGCSqGSIb3DQEJBTEPFw0xODEwMTgyMTA2MDhaMA0GCSqGSIb3DQEBAQUABIIBAJCHN1i4p4Ew/lvwnJUWWXBo9Lw0RDfiRzGSm34/Vr7GRgtrk3HTJwtqQ1uGx1Tjx3Xp5br02ooSGjNNAxYZC/qWlPx+c+mn6flyJHP45Tc2VlPLdLlr8y7WNITOMLQUnOm+c4nfjCLpdVCZAhysrHMOoYWTTcgK6QKGuW8ODJmfuidoJxiMJkzKJp3IuV8GojXbYvO2iiwMbq2KVwBNjQHOCNRE0FDsYZXuN5f0bDJOHPiRkcH3v0oXGeQxQ+zaUlgDuuIiYXMS27JwBlQRw0IVtlgdY2PIk19RRtuGMVMuDJaTw1AOMlZ6zkcXF/UhcMx98BtIR1Pw6IA9wnf0clw="}
+Payload : {"cwAQwYsmIjNNAxYZC/qWlPx+c+mn6flyJHP45Tc2VlPLdLlr8y7WNITOMLQUnOm+c4nfjCLpdVCZAhysrHMOoYWTTcgK6QKGuW8ODJmfuidoJxiMJkzKJp3IuV8GojXbYvO2iiwMbq2KVwBNjQHOCNRE0FDsYZXuN5f0bDJOHPiRkcH3v0oXGeQxQ+zaUlgDuuIiYXMS27JwBlQRw0IVtlgdY2PIk19RRtuGMVMuDJaTw1AOMlZ6zkcXF/UhcMx98BtIR1Pw6IA9wnf0clw="}
 {
   "data": [
     {
@@ -233,7 +233,7 @@ Payload : {"cwAQwYsmIZwmmq27yU92Cae1y4KydemGNzrEDzqFtpg=ecewmNIr3qULk4=ueYsi8E/l
 }
 ```
 
-You can check the bathes on local vote ledger.
+You can check the batches on local vote ledgers.
 
 ## Counting and Recap
 
