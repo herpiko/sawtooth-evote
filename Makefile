@@ -1,3 +1,8 @@
+sync:
+	rm -rf sawtooth-*
+	git submodule update --init --recursive
+
+
 national:
 	docker network create --subnet=172.20.0.0/16 national
 	-docker kill province-dpt-32.skripsi.local
