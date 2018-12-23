@@ -33,8 +33,14 @@ phase1:
 	make national
 	make server
 	docker ps | grep skripsi.local
+
+generate-dpt:
+	(cd sawtooth-evote-submitter && npm run dpt-admin)
+	(cd sawtooth-evote-client && npm run activate)  
 	
 phase2:
+	docker kill $$(docker ps -a | grep skripsi.local | grep tps | cut -d' ' -f 1) || true
+	docker rm $$(docker ps -a | grep skripsi.local | grep tps | cut -d' ' -f 1) || true
 	make tps1
 	make tps2
 	docker ps | grep skripsi.local
