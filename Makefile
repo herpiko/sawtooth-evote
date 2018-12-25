@@ -16,6 +16,7 @@ server:
 
 tps1:
 	-docker kill $$(docker ps -a | grep tps-1- | cut -d' ' -f1)
+	-docker rm $$(docker ps -a | grep tps-1- | cut -d' ' -f1)
 	-docker network rm tps1
 	docker network create --subnet=172.30.0.0/16 tps1
 	cd sawtooth-evote-node/docker/tps1 && ./run.sh
@@ -23,6 +24,7 @@ tps1:
 
 tps2:
 	-docker kill $$(docker ps -a | grep tps-2- | cut -d' ' -f1)
+	-docker rm $$(docker ps -a | grep tps-2- | cut -d' ' -f1)
 	-docker network rm tps2
 	docker network create --subnet=172.40.0.0/16 tps2
 	cd sawtooth-evote-node/docker/tps2 && ./run.sh
@@ -44,6 +46,13 @@ phase2:
 	make tps1
 	make tps2
 	docker ps | grep skripsi.local
+
+phase3:
+	-docker kill $$(docker ps -a | grep province-vote | cut -d' ' -f1)
+	-docker rm $$(docker ps -a | grep province-vote | cut -d' ' -f1)
+	cd sawtooth-evote-node/docker/province-vote-32 && ./run.sh
+	cd sawtooth-evote-node/docker/province-vote-52 && ./run.sh
+
 
 clean:
 	-docker kill $$(docker ps -a | grep skripsi.local | cut -d' ' -f 1);
