@@ -39,6 +39,10 @@ phase1:
 generate-dpt:
 	(cd sawtooth-evote-submitter && npm run dpt-admin)
 	(cd sawtooth-evote-client && npm run activate)  
+
+generate-dpt-batch:
+	(cd sawtooth-evote-submitter && npm run dpt-admin-batch)
+	(cd sawtooth-evote-client && npm run activate-batch)  
 	
 phase2:
 	docker kill $$(docker ps -a | grep skripsi.local | grep tps | cut -d' ' -f 1) || true
@@ -52,7 +56,6 @@ phase3:
 	-docker rm $$(docker ps -a | grep province-vote | cut -d' ' -f1)
 	cd sawtooth-evote-node/docker/province-vote-32 && ./run.sh
 	cd sawtooth-evote-node/docker/province-vote-52 && ./run.sh
-
 
 clean:
 	-docker kill $$(docker ps -a | grep skripsi.local | cut -d' ' -f 1);

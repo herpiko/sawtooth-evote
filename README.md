@@ -235,8 +235,29 @@ Payload : {"cwAQwYsmIjNNAxYZC/qWlPx+c+mn6flyJHP45Tc2VlPLdLlr8y7WNITOMLQUnOm+c4nf
 
 You can check the batches on local vote ledgers.
 
-## Counting and Recap
+## Phase 3, TPS submission
+```
+$ make phase3
+$ cd sawtooth-evote-voter-machine
+$ npm run submit-tps1
+```
 
 ## Tallying
 
-## Report
+```
+https://localhost:3443/api/tallying
+```
+
+## Verifying ballot (sawtooth-evote-voter-machine)
+
+Get the idv
+
+```
+$ npm run idv 91c1b928e03
+```
+
+Verify the ballot
+
+```
+$ npm run verify_ballot idvvalue encryptedballot
+```
