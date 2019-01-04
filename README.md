@@ -261,3 +261,22 @@ Verify the ballot
 ```
 $ npm run verify_ballot idvvalue encryptedballot
 ```
+
+## Scalability Measurement
+
+Genesis,
+
+```
+$ (cd sawtooth-evote-node/docker/province-vote-benchmark-1 && ./run.sh)
+```
+
+The rest,
+```
+$ (cd sawtooth-evote-node/docker/province-vote-benchmark-node && TOTAL_INSTANCES=33 ./full.sh)
+```
+
+Benchmark,
+
+```
+$ (cd sawtooth-evote-submitter && TOTAL_TX=500 TOTAL_NODES=33 ./benchmark.sh)
+```
